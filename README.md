@@ -4,11 +4,6 @@ Onaylıyorum anket widget'larını Flutter uygulamanızda gösteren SDK. Panelde
 
 Anket içeriği panelden yönetilir: soruları, başlangıç ve tamamlanma ekranını değiştirdiğinizde uygulamayı güncellemeniz gerekmez.
 
-## Gereksinimler
-
-- Flutter 3.16 veya üstü (Dart 3.2+)
-- iOS ve Android
-
 ## Kurulum
 
 `pubspec.yaml` dosyanıza ekleyin:
