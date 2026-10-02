@@ -32,7 +32,7 @@ class OnayliyorumSurveyView extends StatefulWidget {
   /// false ise bulunduğu alanı doldurur ve anket kendi içinde kayar.
   final bool autoHeight;
 
-  /// Anket gösterildiğinde paneldeki gösterim sayacı artırılır.
+  /// Paneldeki sayaçlar: anket gösterildiğinde "açılma", cevap gönderilmeden kapatıldığında "kapanma" artırılır.
   final bool trackImpression;
 
   /// Anket gönderildiğinde bir kez çağrılır.
@@ -66,6 +66,15 @@ class _OnayliyorumSurveyViewState extends State<OnayliyorumSurveyView> {
   void initState() {
     super.initState();
     _load();
+  }
+
+  @override
+  void dispose() {
+    // Anket gösterildi ama cevap gönderilmeden kapatıldı.
+    if (_impressionSent && !_completed) {
+      (widget.api ?? OnayliyorumApi.instance).sendEvent(widget.widgetKey, OnayliyorumEvent.dismiss);
+    }
+    super.dispose();
   }
 
   @override

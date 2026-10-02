@@ -1,6 +1,6 @@
 name: onayliyorum_flutter_app_widget
 description: Onaylıyorum anket widget'larını Flutter uygulamalarında gösteren SDK.
-version: 0.1.0
+version: 0.1.1
 homepage: https://onayliyorum.app
 repository: https://github.com/iMestav/onayliyorum_flutter_widget
 publish_to: none

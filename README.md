@@ -18,7 +18,7 @@ dependencies:
   onayliyorum_flutter_app_widget:
     git:
       url: https://github.com/iMestav/onayliyorum_flutter_widget.git
-      ref: v0.1.0
+      ref: v0.1.1
 ```
 
 `ref` ile belirli bir sürüme sabitlenirsiniz; yeni sürüme geçmek için etiketi değiştirip `flutter pub get` çalıştırın. Sürüm notları için [CHANGELOG.md](CHANGELOG.md) dosyasına bakın.
@@ -33,7 +33,7 @@ dependencies:
 
 ## Widget anahtarı
 
-Onaylıyorum panelinde bir **anket widget'ı** oluşturun ve embed kodundaki `wgt_...` değerini kullanın. Seçtiğiniz tasarım (köşe butonu, açılır pencere vb.) yalnızca web sitesi içindir; uygulamada anketin nasıl gösterileceğini aşağıdaki iki yoldan biriyle siz belirlersiniz. Widget'ta izinli alan adı tanımlamayın; mobil uygulamaların alan adı yoktur.
+Onaylıyorum panelinde **Paylaş ve Tanıt → Mobil Widget'lar** sayfasından bir widget oluşturun ve anketinizi seçin. "Kurulum kodu" penceresinde `wgt_...` anahtarınız kodlara yerleştirilmiş olarak gelir. Aynı sayfada widget'ın kaç kez açıldığını, kaç kez cevap gönderilmeden kapatıldığını ve kaç cevap geldiğini görürsünüz.
 
 ## Kullanım
 
@@ -62,7 +62,7 @@ if (result == OnayliyorumSurveyResult.completed) {
 | `user`                | –          | Verilirse cevap müşteriye bağlanır. Aşağıda "Müşteri bilgisi" bölümüne bakın.                         |
 | `heightFactor`        | `0.75`    | Pencerenin ekran yüksekliğine oranı (0.3 – 1.0).                                                               |
 | `closeAfterCompleted` | 3 saniye    | Gönderimden sonra pencerenin açık kalacağı süre.`null` verilirse kullanıcı kapatana kadar açık kalır. |
-| `trackImpression`     | `true`    | Paneldeki gösterim sayacını artırır.                                                                          |
+| `trackImpression`     | `true`    | Paneldeki açılma ve kapanma sayaçlarını artırır.                                                            |
 | `onCompleted`         | –          | Anket gönderildiği anda çağrılır (pencere kapanmadan önce).                                                 |
 | `onError`             | –          | Widget ya da anket yüklenemediğinde çağrılır.                                                                |
 
@@ -95,7 +95,7 @@ Görünüm bulunduğu alanı doldurur ve anket kendi içinde kayar. Kaydırılab
 | `widgetKey`         | zorunlu     | Anket widget'ının anahtarı.                                                                                                                                            |
 | `user`              | –          | Verilirse cevap müşteriye bağlanır.                                                                                                                                   |
 | `autoHeight`        | `false`   | Yüksekliği anketin içeriğine göre ayarlar.                                                                                                                           |
-| `trackImpression`   | `true`    | Paneldeki gösterim sayacını artırır.                                                                                                                                 |
+| `trackImpression`   | `true`    | Paneldeki açılma ve kapanma sayaçlarını artırır.                                                                                                                   |
 | `onCompleted`       | –          | Anket gönderildiğinde bir kez çağrılır.                                                                                                                             |
 | `onAlreadyAnswered` | –          | Müşteri bu işlem için anketi daha önce cevapladıysa çağrılır; anket yerine kısa bir mesaj gösterilir. Yalnızca`transaction` verildiğinde çağrılabilir. |
 | `onError`           | –          | Widget ya da anket yüklenemediğinde çağrılır.                                                                                                                       |
@@ -193,7 +193,7 @@ Yükleme başarısız olursa görünümde bir mesaj ve "Tekrar dene" butonu gös
 
 ## Bilinmesi gerekenler
 
-- `user` verilmeyen cevaplar anonim kaydedilir. Tüm cevaplar panelde "Web widget'ı" kaynağıyla görünür.
+- `user` verilmeyen cevaplar anonim kaydedilir. Cevaplar panelde "Mobil widget" kaynağıyla görünür ve bu kaynağa göre filtrelenebilir.
 - `user` ile açılan her anket panelde bir gönderim olarak sayılır. `transaction` ile açılan işlemler için ayrıca SMS ya da e-posta gönderilmez; aynı işlem için SMS ya da e-posta üzerinden verilmiş cevap da "daha önce cevaplanmış" sayılır.
 - Anonim cevaplarda aynı IP adresinden saatte en fazla 10 cevap kabul edilir. `user` ile gönderilen cevaplar bu sınıra tabi değildir.
 - Anketteki dış bağlantılar (KVKK, kampanya görseli vb.) cihazın tarayıcısında açılır.

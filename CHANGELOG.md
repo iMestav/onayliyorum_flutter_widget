@@ -1,3 +1,8 @@
+## 0.1.1
+
+* Kapanma sayacı: anket cevap gönderilmeden kapatıldığında panele bildirilir.
+* Widget anahtarı artık paneldeki Mobil Widget'lar sayfasından alınır.
+
 ## 0.1.0
 
 * Proje iskeleti.
