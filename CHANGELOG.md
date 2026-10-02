@@ -1,3 +1,7 @@
+## 0.1.2
+
+* Kapanma bildirimi kaldırıldı; panelde yalnızca gösterim ve cevap sayılır.
+
 ## 0.1.1
 
 * Kapanma sayacı: anket cevap gönderilmeden kapatıldığında panele bildirilir.

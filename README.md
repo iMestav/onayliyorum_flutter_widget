@@ -18,7 +18,7 @@ dependencies:
   onayliyorum_flutter_app_widget:
     git:
       url: https://github.com/iMestav/onayliyorum_flutter_widget.git
-      ref: v0.1.1
+      ref: v0.1.2
 ```
 
 `ref` ile belirli bir sürüme sabitlenirsiniz; yeni sürüme geçmek için etiketi değiştirip `flutter pub get` çalıştırın. Sürüm notları için [CHANGELOG.md](CHANGELOG.md) dosyasına bakın.
@@ -33,7 +33,7 @@ dependencies:
 
 ## Widget anahtarı
 
-Onaylıyorum panelinde **Paylaş ve Tanıt → Mobil Widget'lar** sayfasından bir widget oluşturun ve anketinizi seçin. "Kurulum kodu" penceresinde `wgt_...` anahtarınız kodlara yerleştirilmiş olarak gelir. Aynı sayfada widget'ın kaç kez açıldığını, kaç kez cevap gönderilmeden kapatıldığını ve kaç cevap geldiğini görürsünüz.
+Onaylıyorum panelinde **Paylaş ve Tanıt → Mobil Widget'lar** sayfasından bir widget oluşturun ve anketinizi seçin. "Kurulum kodu" penceresinde `wgt_...` anahtarınız kodlara yerleştirilmiş olarak gelir. Aynı sayfada anketin müşterilerin önüne kaç kez geldiğini ve kaç kez cevaplandığını görürsünüz.
 
 ## Kullanım
 
@@ -62,7 +62,7 @@ if (result == OnayliyorumSurveyResult.completed) {
 | `user`                | –          | Verilirse cevap müşteriye bağlanır. Aşağıda "Müşteri bilgisi" bölümüne bakın.                         |
 | `heightFactor`        | `0.75`    | Pencerenin ekran yüksekliğine oranı (0.3 – 1.0).                                                               |
 | `closeAfterCompleted` | 3 saniye    | Gönderimden sonra pencerenin açık kalacağı süre.`null` verilirse kullanıcı kapatana kadar açık kalır. |
-| `trackImpression`     | `true`    | Paneldeki açılma ve kapanma sayaçlarını artırır.                                                            |
+| `trackImpression`     | `true`    | Paneldeki gösterim sayacını artırır.                                                                          |
 | `onCompleted`         | –          | Anket gönderildiği anda çağrılır (pencere kapanmadan önce).                                                 |
 | `onError`             | –          | Widget ya da anket yüklenemediğinde çağrılır.                                                                |
 
@@ -95,7 +95,7 @@ Görünüm bulunduğu alanı doldurur ve anket kendi içinde kayar. Kaydırılab
 | `widgetKey`         | zorunlu     | Anket widget'ının anahtarı.                                                                                                                                            |
 | `user`              | –          | Verilirse cevap müşteriye bağlanır.                                                                                                                                   |
 | `autoHeight`        | `false`   | Yüksekliği anketin içeriğine göre ayarlar.                                                                                                                           |
-| `trackImpression`   | `true`    | Paneldeki açılma ve kapanma sayaçlarını artırır.                                                                                                                   |
+| `trackImpression`   | `true`    | Paneldeki gösterim sayacını artırır.                                                                                                                                 |
 | `onCompleted`       | –          | Anket gönderildiğinde bir kez çağrılır.                                                                                                                             |
 | `onAlreadyAnswered` | –          | Müşteri bu işlem için anketi daha önce cevapladıysa çağrılır; anket yerine kısa bir mesaj gösterilir. Yalnızca`transaction` verildiğinde çağrılabilir. |
 | `onError`           | –          | Widget ya da anket yüklenemediğinde çağrılır.                                                                                                                       |

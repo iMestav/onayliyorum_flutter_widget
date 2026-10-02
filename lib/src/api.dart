@@ -10,7 +10,7 @@ import 'user.dart';
 final RegExp _keyPattern = RegExp(r'^wgt_[A-Za-z0-9]{10}$');
 
 /// Paneldeki widget istatistiklerine yansıyan olaylar.
-enum OnayliyorumEvent { impression, click, dismiss }
+enum OnayliyorumEvent { impression, click }
 
 class _CacheEntry<T> {
   _CacheEntry(this.data, this.expiresAt);
